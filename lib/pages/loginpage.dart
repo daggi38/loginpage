@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:pj1/buttons.dart';
 
@@ -9,37 +7,39 @@ class Loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          title: const Text(
+            "ofsp_ce",
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+        ),
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
-             image: DecorationImage(
+              image: DecorationImage(
                 image: AssetImage('lib/images/background2.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const SizedBox(
                   height: 30,
                 ),
-              const  Expanded(
-                  flex: 1,
-                  child: Text(
-                    "ofsp_ce",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
+                Container(
                   child: Column(
                     children: [
-                      SizedBox(height: 65,),
-                     const Padding(
+                      const SizedBox(
+                        height: 65,
+                      ),
+                      const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         child: Text(
                           "We help you track your health",
@@ -49,70 +49,70 @@ class Loginpage extends StatelessWidget {
                               fontSize: 38),
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       Mybuttons(
-                        onTap: () {
-                          
-                        },
+                          onTap: () {},
                           buttonlabel: " Continue with Facebook",
                           iconpath: "lib/images/facebook.png"),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Mybuttons(
-
-                        onTap: () {
-                          
-                        },
+                          onTap: () {},
                           buttonlabel: " Continue with Google",
                           iconpath: "lib/images/google.png"),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                       child: Divider(
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
                                 indent: 20.0,
                                 endIndent: 20.0,
                                 thickness: 2,
                               ),
-                     ),
-                     Text(
-                          "Or",
-                          style: TextStyle(color: Colors.white),
-                     ),
-                     Expanded(
-                          child: Divider(
-                                  indent: 20.0,
-                                  endIndent: 20.0,
-                                  thickness: 2,
-                          ),
-                      ),
-                        ],
-                      ),
-                       SizedBox(
-                        height: 30,
+                            ),
+                            Text(
+                              "Or",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                indent: 20.0,
+                                endIndent: 20.0,
+                                thickness: 2,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Mybuttons(
-                        onTap: () {
-                          
-                        },
-                        buttonlabel: "Create a free account", iconpath: ""),
-                      SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Already have an account? ",style: TextStyle(color: Colors.white),
-                          ),
-                          GestureDetector(
-                            onTap: (){},
-                            child: Text("Log in",style: TextStyle(decoration: TextDecoration.underline, 
-                            decorationColor: Colors.white,
-                            color: Colors.white),),
-                          ),
-                        
-                        ],
+                          onTap: () {},
+                          buttonlabel: "Create a free account",
+                          iconpath: ""),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Already have an account? ",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: const Text(
+                                "Log in",
+                                style: TextStyle(
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Colors.white,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
